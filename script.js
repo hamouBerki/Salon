@@ -7,22 +7,23 @@ const questions = [
 let indexQuestion = 0;
 let reponses = [];
 
-function afficherQuestion() {
+/* URL pour QR code */
+const url = "https://hamouBerki.github.io/Salon/";
 
-    document.getElementById("question").innerText =
-        questions[indexQuestion];
+function afficherQuestion() {
+    document.getElementById("question").innerText = questions[indexQuestion];
 
     document.getElementById("reponse").value =
         reponses[indexQuestion] || "";
 }
 
+/* Passer à la question suivante */
 function suivant() {
-
-    const valeur =
-        document.getElementById("reponse").value.trim();
+    const input = document.getElementById("reponse");
+    const valeur = input.value.trim();
 
     if (valeur === "") {
-        alert("Veuillez répondre à la question.");
+        alert("Veuillez entrer une réponse.");
         return;
     }
 
@@ -37,12 +38,11 @@ function suivant() {
     }
 }
 
+/* Revenir en arrière */
 function retour() {
-
     if (indexQuestion > 0) {
-
-        reponses[indexQuestion] =
-            document.getElementById("reponse").value;
+        const input = document.getElementById("reponse");
+        reponses[indexQuestion] = input.value.trim();
 
         indexQuestion--;
 
@@ -50,43 +50,40 @@ function retour() {
     }
 }
 
+/* Recommencer le questionnaire */
 function recommencer() {
-
     indexQuestion = 0;
     reponses = [];
-
-    document.getElementById("resultat").innerHTML = "";
 
     document.getElementById("reponse").style.display = "block";
     document.querySelector(".btn-suivant").style.display = "block";
 
+    document.getElementById("resultat").innerHTML = "";
+
     afficherQuestion();
 }
 
+/* Affichage des résultats */
 function afficherResultat() {
-
     document.getElementById("question").innerText =
-        "Merci pour vos réponses !";
+        "Merci pour vos réponses 👍";
 
     document.getElementById("reponse").style.display = "none";
     document.querySelector(".btn-suivant").style.display = "none";
 
     document.getElementById("resultat").innerHTML = `
-        <h3>Vos réponses :</h3>
+        <h3>📋 Récapitulatif :</h3>
         <p><strong>Comment ça va ?</strong><br>${reponses[0]}</p>
-
         <p><strong>Où habites-tu ?</strong><br>${reponses[1]}</p>
-
         <p><strong>Quel âge as-tu ?</strong><br>${reponses[2]}</p>
     `;
 }
 
-/* QR Code */
-const url = "https://berkihamou.github.io/questionnaire/";
-
+/* Génération du QR code */
 document.addEventListener("DOMContentLoaded", () => {
+    const qr = document.getElementById("qrcode");
 
-    document.getElementById("qrcode").src =
+    qr.src =
         "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" +
         encodeURIComponent(url);
 
