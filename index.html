@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Questionnaire</h1>
+
+        <div id="question">
+            Chargement...
+        </div>
+
+        <input type="text" id="reponse" placeholder="Votre réponse">
+
+        <button class="btn-suivant" onclick="suivant()">
+            Suivant
+        </button>
+
+        <button class="back-btn" onclick="retour()">
+            ⬅ Retour
+        </button>
+
+        <button class="restart-btn" onclick="recommencer()">
+            🔄 Recommencer
+        </button>
+
+        <div id="resultat"></div>
+
+        <h3>Scanner pour ouvrir le questionnaire</h3>
+        <img id="qrcode">
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

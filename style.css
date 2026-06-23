@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#question {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#reponse {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.2s;
+}
+
+.btn-suivant {
+    background: #3498db;
+    color: white;
+}
+
+.btn-suivant:hover {
+    background: #2980b9;
+}
+
+.back-btn {
+    background: #7c4dff;
+    color: white;
+}
+
+.back-btn:hover {
+    background: #5e35ff;
+}
+
+.restart-btn {
+    background: #34495e;
+    color: white;
+}
+
+.restart-btn:hover {
+    background: #2c3e50;
+}
+
+#resultat {
+    margin-top: 25px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+#qrcode {
+    margin-top: 20px;
+    width: 140px;
+    height: 140px;
+}
