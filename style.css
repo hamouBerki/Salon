@@ -13,7 +13,7 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 40px auto;
     background: rgba(255,255,255,0.92);
     padding: 40px;
@@ -36,15 +36,13 @@ h1 {
 .subtitle {
     text-align: center;
     color: #6b7280;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* QR CODE */
 .qr-section {
     text-align: center;
-    margin: 25px 0 40px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 25px;
 }
 
 .qr-title {
@@ -57,41 +55,47 @@ h1 {
     width: 160px;
     height: 160px;
     border-radius: 12px;
-    background: white;
     padding: 8px;
+    background: white;
     box-shadow: 0 10px 25px rgba(0,0,0,0.10);
 }
 
-/* SECTIONS */
-.section-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 40px;
+/* PROGRESSION */
+#progress {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
 }
 
-.section-number {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+#bar {
+    height: 100%;
+    width: 0%;
     background: linear-gradient(135deg, #4f46e5, #06b6d4);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
+    transition: 0.3s;
 }
 
-/* TEXTES */
+/* STEPS */
+.step {
+    display: none;
+    animation: fade 0.3s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* QUESTIONS */
 h2 {
-    margin: 0;
     font-size: 18px;
-}
-
-.question {
-    margin-top: 15px;
-    font-weight: 600;
-    color: #374151;
+    margin-bottom: 15px;
 }
 
 /* LABELS */
@@ -99,8 +103,9 @@ label {
     display: block;
     padding: 10px;
     margin: 6px 0;
-    border-radius: 10px;
     background: #f9fafb;
+    border-radius: 10px;
+    cursor: pointer;
     transition: 0.2s;
 }
 
@@ -109,38 +114,58 @@ label:hover {
 }
 
 /* INPUTS */
-input, textarea {
+textarea {
     width: 100%;
-    margin-top: 10px;
+    height: 90px;
     padding: 12px;
     border-radius: 10px;
     border: 1px solid #e5e7eb;
     font-family: inherit;
 }
 
-textarea:focus, input:focus {
+textarea:focus {
     outline: none;
     border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
 }
 
-/* BUTTON */
-button {
-    margin-top: 30px;
+/* NAV BUTTONS */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#prev {
+    background: #e5e7eb;
+}
+
+#next {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+}
+
+/* SUBMIT */
+#submit {
+    margin-top: 15px;
     width: 100%;
     padding: 14px;
     border: none;
     border-radius: 12px;
     background: linear-gradient(135deg, #4f46e5, #6366f1);
     color: white;
-    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(79,70,229,0.25);
 }
 
 /* CONFIRMATION */
@@ -156,5 +181,9 @@ button:hover {
     .container {
         margin: 15px;
         padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
     }
 }

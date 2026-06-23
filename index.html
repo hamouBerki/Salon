@@ -13,100 +13,67 @@
 
 <div class="container">
 
-    <!-- HEADER -->
     <h1>Branding & Consultation</h1>
-    <p class="subtitle">
-        Construisons ensemble la prochaine identité de notre association
-    </p>
+    <p class="subtitle">Construisons ensemble la prochaine identité de l'association</p>
 
-    <!-- QR CODE (page d’accueil uniquement) -->
+    <!-- QR CODE -->
     <div class="qr-section">
         <p class="qr-title">📱 Scanner pour accéder au questionnaire</p>
         <img id="qrcode" alt="QR Code">
     </div>
 
-    <!-- FORMULAIRE -->
+    <!-- PROGRESSION -->
+    <div id="progress">
+        <div id="bar"></div>
+    </div>
+
+    <!-- FORM -->
     <form id="formulaire">
 
-        <!-- SECTION 1 -->
-        <div class="section-title">
-            <div class="section-number">1</div>
-            <h2>Votre relation avec l'association</h2>
+        <!-- STEP 1 -->
+        <div class="step active">
+            <h2>Depuis combien de temps faites-vous partie de l'association ?</h2>
+
+            <label><input type="radio" name="anciennete" value="Moins d'un an"> Moins d'un an</label>
+            <label><input type="radio" name="anciennete" value="1 à 3 ans"> 1 à 3 ans</label>
+            <label><input type="radio" name="anciennete" value="4 à 7 ans"> 4 à 7 ans</label>
+            <label><input type="radio" name="anciennete" value="Plus de 7 ans"> Plus de 7 ans</label>
         </div>
 
-        <p class="question">Depuis combien de temps faites-vous partie de l'association ?</p>
-        <label><input type="radio" name="anciennete" value="Moins d'un an"> Moins d'un an</label>
-        <label><input type="radio" name="anciennete" value="1 à 3 ans"> 1 à 3 ans</label>
-        <label><input type="radio" name="anciennete" value="4 à 7 ans"> 4 à 7 ans</label>
-        <label><input type="radio" name="anciennete" value="Plus de 7 ans"> Plus de 7 ans</label>
-        <label><input type="radio" name="anciennete" value="Membre fondateur"> Membre fondateur</label>
+        <!-- STEP 2 -->
+        <div class="step">
+            <h2>Niveau d'implication</h2>
 
-        <p class="question">Niveau d'implication</p>
-        <label><input type="radio" name="implication" value="Très impliqué"> Très impliqué</label>
-        <label><input type="radio" name="implication" value="Régulièrement"> Régulièrement impliqué</label>
-        <label><input type="radio" name="implication" value="Occasionnel"> Occasionnel</label>
-        <label><input type="radio" name="implication" value="Anciennement impliqué"> Anciennement impliqué</label>
-
-        <!-- SECTION 2 -->
-        <div class="section-title">
-            <div class="section-number">2</div>
-            <h2>L'association aujourd'hui</h2>
+            <label><input type="radio" name="implication" value="Très impliqué"> Très impliqué</label>
+            <label><input type="radio" name="implication" value="Régulièrement"> Régulièrement</label>
+            <label><input type="radio" name="implication" value="Occasionnel"> Occasionnel</label>
         </div>
 
-        <p class="question">Décrivez l'association en 5 mots</p>
-        <textarea name="description" rows="3"></textarea>
-
-        <p class="question">Principal apport</p>
-        <label><input type="checkbox" name="apport" value="Réseau"> Réseau professionnel</label>
-        <label><input type="checkbox" name="apport" value="Mentorat"> Mentorat</label>
-        <label><input type="checkbox" name="apport" value="Opportunités"> Opportunités</label>
-        <label><input type="checkbox" name="apport" value="Développement"> Développement personnel</label>
-        <label><input type="checkbox" name="apport" value="Impact"> Impact sociétal</label>
-
-        <!-- SECTION 3 -->
-        <div class="section-title">
-            <div class="section-number">3</div>
-            <h2>L'association de demain</h2>
+        <!-- STEP 3 -->
+        <div class="step">
+            <h2>Décrivez l'association en 5 mots</h2>
+            <textarea name="description"></textarea>
         </div>
 
-        <p class="question">Vision dans 10 ans</p>
-        <textarea name="vision" rows="3"></textarea>
-
-        <!-- SECTION 4 -->
-        <div class="section-title">
-            <div class="section-number">4</div>
-            <h2>Réflexion sur le nom</h2>
+        <!-- STEP 4 -->
+        <div class="step">
+            <h2>Quelle est votre vision dans 10 ans ?</h2>
+            <textarea name="vision"></textarea>
         </div>
 
-        <p class="question">Le nom actuel est-il adapté ?</p>
-        <label><input type="radio" name="nom_actuel" value="Oui totalement"> Oui totalement</label>
-        <label><input type="radio" name="nom_actuel" value="Oui plutôt"> Oui plutôt</label>
-        <label><input type="radio" name="nom_actuel" value="Partiellement"> Partiellement</label>
-        <label><input type="radio" name="nom_actuel" value="Non"> Non</label>
-
-        <p class="question">Idées de nouveaux noms</p>
-        <textarea name="noms" rows="3"></textarea>
-
-        <p class="question">Ton du futur nom</p>
-        <label><input type="checkbox" name="ton" value="Institutionnel"> Institutionnel</label>
-        <label><input type="checkbox" name="ton" value="Moderne"> Moderne</label>
-        <label><input type="checkbox" name="ton" value="Prestigieux"> Prestigieux</label>
-        <label><input type="checkbox" name="ton" value="Innovant"> Innovant</label>
-
-        <!-- SECTION 5 -->
-        <div class="section-title">
-            <div class="section-number">5</div>
-            <h2>Vos idées</h2>
+        <!-- STEP 5 -->
+        <div class="step">
+            <h2>Idées de nouveaux noms</h2>
+            <textarea name="noms"></textarea>
         </div>
 
-        <textarea name="idees" rows="3" placeholder="Proposez jusqu'à 3 noms..."></textarea>
-        <textarea name="phrase" rows="3" placeholder="Phrase de motivation..."></textarea>
-        <textarea name="fierte" rows="3" placeholder="Plus grande fierté..."></textarea>
-        <textarea name="manque" rows="3" placeholder="Si elle disparaît..."></textarea>
-        <textarea name="qualites" rows="3" placeholder="Qualités de l'association..."></textarea>
-        <textarea name="emotion" rows="3" placeholder="Émotion ressentie..."></textarea>
+        <!-- NAVIGATION -->
+        <div class="buttons">
+            <button type="button" id="prev">⬅ Précédent</button>
+            <button type="button" id="next">Suivant ➜</button>
+        </div>
 
-        <button type="submit">Envoyer la réponse</button>
+        <button type="submit" id="submit" style="display:none;">Envoyer</button>
 
     </form>
 
