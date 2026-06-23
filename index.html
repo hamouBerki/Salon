@@ -4,44 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire</title>
+    <title>Consultation Association</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>Questionnaire</h1>
+    <!-- HEADER -->
+    <h1>Branding & Consultation</h1>
+    <p class="subtitle">
+        Construisons ensemble la prochaine identité de notre association
+    </p>
 
-        <div id="question">
-            Chargement...
-        </div>
-
-        <input type="text" id="reponse" placeholder="Votre réponse">
-
-        <button class="btn-suivant" onclick="suivant()">
-            Suivant
-        </button>
-
-        <button class="back-btn" onclick="retour()">
-            ⬅ Retour
-        </button>
-
-        <button class="restart-btn" onclick="recommencer()">
-            🔄 Recommencer
-        </button>
-
-        <div id="resultat"></div>
-
-        <h3>Scanner pour ouvrir le questionnaire</h3>
-        <img id="qrcode">
-
+    <!-- QR CODE (page d’accueil uniquement) -->
+    <div class="qr-section">
+        <p class="qr-title">📱 Scanner pour accéder au questionnaire</p>
+        <img id="qrcode" alt="QR Code">
     </div>
 
-    <script src="script.js"></script>
+    <!-- FORMULAIRE -->
+    <form id="formulaire">
+
+        <!-- SECTION 1 -->
+        <div class="section-title">
+            <div class="section-number">1</div>
+            <h2>Votre relation avec l'association</h2>
+        </div>
+
+        <p class="question">Depuis combien de temps faites-vous partie de l'association ?</p>
+        <label><input type="radio" name="anciennete" value="Moins d'un an"> Moins d'un an</label>
+        <label><input type="radio" name="anciennete" value="1 à 3 ans"> 1 à 3 ans</label>
+        <label><input type="radio" name="anciennete" value="4 à 7 ans"> 4 à 7 ans</label>
+        <label><input type="radio" name="anciennete" value="Plus de 7 ans"> Plus de 7 ans</label>
+        <label><input type="radio" name="anciennete" value="Membre fondateur"> Membre fondateur</label>
+
+        <p class="question">Niveau d'implication</p>
+        <label><input type="radio" name="implication" value="Très impliqué"> Très impliqué</label>
+        <label><input type="radio" name="implication" value="Régulièrement"> Régulièrement impliqué</label>
+        <label><input type="radio" name="implication" value="Occasionnel"> Occasionnel</label>
+        <label><input type="radio" name="implication" value="Anciennement impliqué"> Anciennement impliqué</label>
+
+        <!-- SECTION 2 -->
+        <div class="section-title">
+            <div class="section-number">2</div>
+            <h2>L'association aujourd'hui</h2>
+        </div>
+
+        <p class="question">Décrivez l'association en 5 mots</p>
+        <textarea name="description" rows="3"></textarea>
+
+        <p class="question">Principal apport</p>
+        <label><input type="checkbox" name="apport" value="Réseau"> Réseau professionnel</label>
+        <label><input type="checkbox" name="apport" value="Mentorat"> Mentorat</label>
+        <label><input type="checkbox" name="apport" value="Opportunités"> Opportunités</label>
+        <label><input type="checkbox" name="apport" value="Développement"> Développement personnel</label>
+        <label><input type="checkbox" name="apport" value="Impact"> Impact sociétal</label>
+
+        <!-- SECTION 3 -->
+        <div class="section-title">
+            <div class="section-number">3</div>
+            <h2>L'association de demain</h2>
+        </div>
+
+        <p class="question">Vision dans 10 ans</p>
+        <textarea name="vision" rows="3"></textarea>
+
+        <!-- SECTION 4 -->
+        <div class="section-title">
+            <div class="section-number">4</div>
+            <h2>Réflexion sur le nom</h2>
+        </div>
+
+        <p class="question">Le nom actuel est-il adapté ?</p>
+        <label><input type="radio" name="nom_actuel" value="Oui totalement"> Oui totalement</label>
+        <label><input type="radio" name="nom_actuel" value="Oui plutôt"> Oui plutôt</label>
+        <label><input type="radio" name="nom_actuel" value="Partiellement"> Partiellement</label>
+        <label><input type="radio" name="nom_actuel" value="Non"> Non</label>
+
+        <p class="question">Idées de nouveaux noms</p>
+        <textarea name="noms" rows="3"></textarea>
+
+        <p class="question">Ton du futur nom</p>
+        <label><input type="checkbox" name="ton" value="Institutionnel"> Institutionnel</label>
+        <label><input type="checkbox" name="ton" value="Moderne"> Moderne</label>
+        <label><input type="checkbox" name="ton" value="Prestigieux"> Prestigieux</label>
+        <label><input type="checkbox" name="ton" value="Innovant"> Innovant</label>
+
+        <!-- SECTION 5 -->
+        <div class="section-title">
+            <div class="section-number">5</div>
+            <h2>Vos idées</h2>
+        </div>
+
+        <textarea name="idees" rows="3" placeholder="Proposez jusqu'à 3 noms..."></textarea>
+        <textarea name="phrase" rows="3" placeholder="Phrase de motivation..."></textarea>
+        <textarea name="fierte" rows="3" placeholder="Plus grande fierté..."></textarea>
+        <textarea name="manque" rows="3" placeholder="Si elle disparaît..."></textarea>
+        <textarea name="qualites" rows="3" placeholder="Qualités de l'association..."></textarea>
+        <textarea name="emotion" rows="3" placeholder="Émotion ressentie..."></textarea>
+
+        <button type="submit">Envoyer la réponse</button>
+
+    </form>
+
+    <p id="confirmation"></p>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>

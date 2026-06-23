@@ -1,97 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+    color: #1f2937;
 }
 
+/* CONTAINER */
 .container {
-    background: white;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.92);
+    padding: 40px;
     border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+    backdrop-filter: blur(10px);
 }
 
+/* TITRE */
 h1 {
-    margin-bottom: 25px;
-    color: #333;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-#question {
-    font-size: 22px;
-    font-weight: 600;
+.subtitle {
+    text-align: center;
+    color: #6b7280;
     margin-bottom: 20px;
-    color: #222;
 }
 
-#reponse {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 16px;
+/* QR CODE */
+.qr-section {
+    text-align: center;
+    margin: 25px 0 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-button {
-    width: 100%;
-    border: none;
-    padding: 14px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: 0.2s;
-}
-
-.btn-suivant {
-    background: #3498db;
-    color: white;
-}
-
-.btn-suivant:hover {
-    background: #2980b9;
-}
-
-.back-btn {
-    background: #7c4dff;
-    color: white;
-}
-
-.back-btn:hover {
-    background: #5e35ff;
-}
-
-.restart-btn {
-    background: #34495e;
-    color: white;
-}
-
-.restart-btn:hover {
-    background: #2c3e50;
-}
-
-#resultat {
-    margin-top: 25px;
-    text-align: left;
-    line-height: 1.8;
+.qr-title {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 10px;
 }
 
 #qrcode {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    background: white;
+    padding: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+/* SECTIONS */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.section-number {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* TEXTES */
+h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.question {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* LABELS */
+label {
+    display: block;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 10px;
+    background: #f9fafb;
+    transition: 0.2s;
+}
+
+label:hover {
+    background: #eef2ff;
+}
+
+/* INPUTS */
+input, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-family: inherit;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+/* BUTTON */
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79,70,229,0.25);
+}
+
+/* CONFIRMATION */
+#confirmation {
+    text-align: center;
     margin-top: 20px;
-    width: 140px;
-    height: 140px;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .container {
+        margin: 15px;
+        padding: 20px;
+    }
 }
